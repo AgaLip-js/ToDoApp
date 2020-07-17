@@ -31,7 +31,7 @@ const Modal = ({ open, setOpen, description, setDescription, todo }) => {
   const editText = async (id) => {
     try {
       const body = { description };
-      const response = await fetch(`/todos/${todo.id}`, {
+      const response = await fetch(`/todos/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
