@@ -18,7 +18,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = fetch("http://localhost:5000/todos", {
+      const response = fetch("/todos", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

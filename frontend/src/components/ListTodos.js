@@ -28,7 +28,7 @@ const ListTodos = () => {
 
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await fetch(`http://localhost:5000/todos/${id}`, {
+      const deleteTodo = await fetch(`/todos/${id}`, {
         method: "DELETE",
       });
       setTodos(todos.filter((todo) => todo.id !== id));

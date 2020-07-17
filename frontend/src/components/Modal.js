@@ -28,11 +28,10 @@ const StyledButton = styled.button`
   margin: 20px;
 `;
 const Modal = ({ open, setOpen, description, setDescription, todo }) => {
-  const updateDescription = async (e) => {
-    e.preventDefault();
+  const editText = async (id) => {
     try {
       const body = { description };
-      const response = await fetch(`http://localhost:5000/todos/${todo.id}`, {
+      const response = await fetch(`/todos/${todo.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
@@ -71,7 +70,7 @@ const Modal = ({ open, setOpen, description, setDescription, todo }) => {
             type="button"
             class="btn btn-danger"
             data-dismiss="modal"
-            onClick={(e) => updateDescription(e)}
+            onClick={() => editText(todo.id)}
           >
             Edit
           </button>
