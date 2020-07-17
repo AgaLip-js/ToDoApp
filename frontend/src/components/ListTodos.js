@@ -39,11 +39,11 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/todos");
+      const response = await fetch("/todos");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {
-      console.error(err.massage);
+      console.error(err.message);
     }
   };
 
